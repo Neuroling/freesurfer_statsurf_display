@@ -72,7 +72,7 @@ if ~ismember(options.SurfaceSource, SupportedSurfaceSources)
 	error('Unsupported seed type');
 end
 
-FreesurferSeedTypes.fs6 = {'aparc', 'desikan', 'aparc.a2009s', 'destreiux', 'dkt', 'voneconomo'};
+FreesurferSeedTypes.fs6 = {'aparc', 'desikan', 'aparc.a2009s', 'destreiux', 'dkt', 'voneconomo','HCP-MMP1'};
 FreesurferSeedTypes.mcribs = {'aparc', 'desikan', 'dkt'};
 
 if ~ismember(FreesurferSeedType, FreesurferSeedTypes.(options.SurfaceSource))
@@ -113,7 +113,11 @@ else
 			case 'voneconomo'
 				if(any(L ~= 43))
 					error('Number of elements must be 43');
-				end
+                end
+            case 'HCP-MMP1'
+                if(any(L ~= 179))
+					error('Number of elements must be 179 per hemisphere');
+                end
 				
 		end
 	end

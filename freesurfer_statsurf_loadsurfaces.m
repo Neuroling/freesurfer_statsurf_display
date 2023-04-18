@@ -57,6 +57,9 @@ Hemis = {'lh', 'rh'};
 		case 'voneconomo'
 			InvalidStructs = {'unknown', 'corpuscallosum'};
 			LabelName = 'economo';
+        case 'hcp-mmp1'
+            InvalidStructs = {'???','L_H_ROI','R_H_ROI'};
+            LabelName = 'HCP-MMP1'
 	end
 	for HemiIDX = 1:length(Hemis)
 		Hemi = Hemis{HemiIDX};
