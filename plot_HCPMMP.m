@@ -13,7 +13,7 @@ function plot_HCPMMP(L,R,ThresholdValue,Range,StatLabel)
 %or for p values 'p'
 
 %set values:
-%add empty values for the ???? and hippcoampus entries
+%add empty values for the ???? and hippocampus entries
 %check if vector or cell array
     Values{1}=[nan,L(1:119),nan,L(120:179)];
     Values{2}=[nan,R(1:119),nan,R(120:179)];
