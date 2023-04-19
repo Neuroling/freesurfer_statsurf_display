@@ -18,7 +18,7 @@ function plot_HCPMMP(L,R,ThresholdValue,Range,StatLabel)
     Values{1}=[nan,L(1:119),nan,L(120:179)];
     Values{2}=[nan,R(1:119),nan,R(120:179)];
 for V=1:2
-    if ThresholdValue>0
+    if ThresholdValue>=0
         ValuesMask{V}=abs(Values{V})>ThresholdValue;
     else
         ValuesMask{V}=abs(Values{V})<-ThresholdValue;
