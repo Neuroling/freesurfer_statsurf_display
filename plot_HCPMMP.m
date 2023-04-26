@@ -15,8 +15,8 @@ function plot_HCPMMP(L,R,ThresholdValue,Range,StatLabel)
 %set values:
 %add empty values for the ???? and hippocampus entries
 %check if vector or cell array
-    Values{1}=[nan,L(1:119),nan,L(120:179)];
-    Values{2}=[nan,R(1:119),nan,R(120:179)];
+    Values{1}=L;%[L(1:119),L(120:179)];
+    Values{2}=R;%[R(1:119),R(120:179)];
 for V=1:2
     if ThresholdValue>=0
         ValuesMask{V}=abs(Values{V})>ThresholdValue;
@@ -24,4 +24,6 @@ for V=1:2
         ValuesMask{V}=abs(Values{V})<-ThresholdValue;
     end
 end
-    freesurfer_statsurf_scalar(Values, ValuesMask, 'HCP-MMP1', 'NoLabels',true,'ValueLimits',Range,'ScalarName',StatLabel);
+options.UseShortLabels=false;
+options.NoLabels=false;
+    freesurfer_statsurf_scalar(Values, ValuesMask, 'HCP-MMP1', 'NoLabels',true,'ValueLimits',Range,'ScalarName',StatLabel,options);
